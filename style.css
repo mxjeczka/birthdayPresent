@@ -10,23 +10,27 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     font-family: 'Super Adorable', sans-serif;
     background: url('assets/images/birthdayBackround.jpg') no-repeat center center;
     background-size: cover;
+    overscroll-behavior: none;
+    touch-action: none;
 }
 
+/* zentrierter Bereich */
 .centered-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* statt center */
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100); /* <- hier geändert */
     width: 100%;
     cursor: pointer;
     overflow: hidden;
-    padding-top: 25vh; /* Abstand von oben, damit erster Text höher ist */
+    padding-top: 25vh;
 }
 
 .text-box {
@@ -35,7 +39,7 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
     text-align: center;
-    margin: 0; /* Abstand zum oberen Container über padding-top */
+    margin: 0;
 }
 
 .text-box p {
@@ -75,7 +79,6 @@ body {
     text-decoration: none;
 }
 
-/* Deine Farben bleiben unverändert */
 .rainbow-text span:nth-child(1) { color: rgba(255, 0, 0, 1); }
 .rainbow-text span:nth-child(2) { color: rgba(255, 127, 0, 1); }
 .rainbow-text span:nth-child(3) { color: rgba(235, 211, 0, 1); }
@@ -84,13 +87,11 @@ body {
 .rainbow-text span:nth-child(6) { color: rgba(152, 0, 255, 1); }
 .rainbow-text span:nth-child(7) { color: rgba(232, 0, 240, 1); }
 
-
 #catBalloon-gif {
     width: 250px;
     margin-top: 1rem;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    /* Optional: verstecken, aber Platz behalten */
     visibility: hidden;
 }
 
@@ -99,13 +100,12 @@ body {
     visibility: visible;
 }
 
-
 #image-container {
     position: relative;
-    width: 90vw;        /* 90% der Viewportbreite */
-    max-width: 300px;   /* max 300px */
+    width: 90vw;
+    max-width: 300px;
     height: auto;
-    aspect-ratio: 3 / 4; /* Verhältnis 300x400 beibehalten */
+    aspect-ratio: 3 / 4;
     margin-top: 2rem;
 }
 
@@ -140,6 +140,7 @@ body {
     display: none;
 }
 
+/* Container der Karte → Höhe angepasst */
 #card-container {
     width: 400px;
     height: 500px;
@@ -200,7 +201,7 @@ body {
   background-color: #f789ff;
 }
 
-/* Responsive Anpassung */
+/* Responsive */
 @media (max-width: 768px) {
   .text-box p,
   .rainbow-text span {

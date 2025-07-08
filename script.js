@@ -1,3 +1,12 @@
+// Richtige Viewport-Höhe setzen, besonders für Mobilgeräte
+function setRealVh() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setRealVh();
+window.addEventListener('resize', setRealVh);
+
 const sentences = [
     `<p>Wszystkiego najlepszego z okazji</p>`
 ];

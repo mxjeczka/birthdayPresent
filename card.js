@@ -1,3 +1,4 @@
+
 const cardFront = document.getElementById('card-front');
 const cardInside = document.getElementById('card-inside');
 const openBtn = document.getElementById('open-card-btn');
