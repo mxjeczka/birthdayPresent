@@ -20,12 +20,13 @@ body {
 .centered-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* statt center */
     align-items: center;
     height: 100vh;
     width: 100%;
     cursor: pointer;
     overflow: hidden;
+    padding-top: 25vh; /* Abstand von oben, damit erster Text höher ist */
 }
 
 .text-box {
@@ -34,11 +35,12 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
     text-align: center;
+    margin: 0; /* Abstand zum oberen Container über padding-top */
 }
 
 .text-box p {
     font-weight: 400;
-    font-size: 2.25rem;
+    font-size: 3rem;
     color: #1E3A8A;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 1rem 0;
@@ -51,15 +53,29 @@ body {
     opacity: 1;
 }
 
+.rainbow-text {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 0.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    user-select: none;
+}
+
+.rainbow-text.visible {
+    opacity: 1;
+}
+
 .rainbow-text span {
     font-weight: 400;
-    font-size: 2.25rem;
-    user-select: none;
+    font-size: 4rem;
     letter-spacing: 0;
     text-rendering: geometricPrecision;
     text-decoration: none;
 }
 
+/* Deine Farben bleiben unverändert */
 .rainbow-text span:nth-child(1) { color: rgba(255, 0, 0, 1); }
 .rainbow-text span:nth-child(2) { color: rgba(255, 127, 0, 1); }
 .rainbow-text span:nth-child(3) { color: rgba(235, 211, 0, 1); }
@@ -68,15 +84,21 @@ body {
 .rainbow-text span:nth-child(6) { color: rgba(152, 0, 255, 1); }
 .rainbow-text span:nth-child(7) { color: rgba(232, 0, 240, 1); }
 
+
 #catBalloon-gif {
     width: 250px;
     margin-top: 1rem;
-    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    /* Optional: verstecken, aber Platz behalten */
+    visibility: hidden;
 }
 
 #catBalloon-gif.visible {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
+
 
 #image-container {
     position: relative;
@@ -111,7 +133,7 @@ body {
     color: #831e8a;
     transform: rotate(6deg);
     text-align: center;
-    margin-top: -40vh;
+    margin-top: -30vh;
 }
 
 .hidden {
