@@ -30,6 +30,6 @@ container.addEventListener('click', () => {
 
         visibleCount++;
     } else {
-        window.location.href = '/pictures.html';
+        window.location.href = 'pictures.html';
     }
 });
