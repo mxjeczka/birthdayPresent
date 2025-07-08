@@ -8,7 +8,6 @@ const images = [
 const container = document.getElementById('image-container');
 const finalMessage = document.getElementById('final-message');
 
-
 let loaded = 0;
 
 images.forEach((src, index) => {
@@ -23,53 +22,59 @@ images.forEach((src, index) => {
         }
     });
 
-    // Drag functionality
     let offsetX = 0;
 
-    img.addEventListener('mousedown', (e) => {
+    function startDrag(e) {
+        e.preventDefault();
         img.classList.add('dragging');
-        offsetX = e.clientX;
 
-        const onMouseMove = (moveEvent) => {
-            const deltaX = moveEvent.clientX - offsetX;
+        const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        offsetX = clientX;
+
+        function onMove(moveEvent) {
+            const currentX = moveEvent.type.includes('touch') ? moveEvent.touches[0].clientX : moveEvent.clientX;
+            const deltaX = currentX - offsetX;
             img.style.transform = `translateX(${deltaX}px) rotate(${deltaX / 10}deg)`;
-        };
+        }
 
-        const onMouseUp = () => {
+        function onEnd() {
             img.classList.remove('dragging');
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('mousemove', onMove);
+            document.removeEventListener('mouseup', onEnd);
+            document.removeEventListener('touchmove', onMove);
+            document.removeEventListener('touchend', onEnd);
 
-            // Snap image to side if dragged far
-            const finalX = parseInt(img.style.transform.match(/-?\d+/)) || 0;
+            const transformMatch = img.style.transform.match(/-?\d+/);
+            const finalX = transformMatch ? parseInt(transformMatch[0]) : 0;
+
             if (Math.abs(finalX) > 150) {
                 img.style.transition = 'transform 0.5s ease-out';
                 img.style.transform = `translateX(${finalX > 0 ? 500 : -500}px) rotate(${finalX > 0 ? 45 : -45}deg)`;
                 setTimeout(() => {
                     img.remove();
 
-                    // Wenn keine Bilder mehr da sind – Text anzeigen
                     if (container.querySelectorAll('img').length === 0) {
                         finalMessage.classList.remove('hidden');
                     }
                 }, 500);
-
             } else {
                 img.style.transition = 'transform 0.3s ease';
                 img.style.transform = 'translateX(0) rotate(0deg)';
             }
-        };
+        }
 
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
-    });
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onEnd);
+        document.addEventListener('touchmove', onMove);
+        document.addEventListener('touchend', onEnd);
+    }
+
+    img.addEventListener('mousedown', startDrag);
+    img.addEventListener('touchstart', startDrag, { passive: false });
 
     container.appendChild(img);
+});
 
-    const finalMessage = document.getElementById('final-message');
-    finalMessage.addEventListener('click', () => {
-        window.location.href = 'card.html';
-    });
-
-
+finalMessage.addEventListener('click', () => {
+    window.location.href = 'card.html';
 });

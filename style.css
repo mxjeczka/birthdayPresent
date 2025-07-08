@@ -6,7 +6,6 @@
     src: url('assets/fonts/SuperAdorable.ttf') format('truetype');
 }
 
-/* Body & Container zentriert (wie flex flex-col min-h-screen items-center justify-center) */
 html,
 body {
     margin: 0;
@@ -37,15 +36,11 @@ body {
     text-align: center;
 }
 
-/* Textabsätze */
 .text-box p {
     font-weight: 400;
     font-size: 2.25rem;
-    /* text-4xl = 36px ungefähr */
     color: #1E3A8A;
-    /* text-customBlue, kannst du anpassen */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* drop-shadow-lg leicht simuliert */
     margin: 1rem 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -56,8 +51,6 @@ body {
     opacity: 1;
 }
 
-/* Regenbogen-Farb-Text "urodzin" */
-
 .rainbow-text span {
     font-weight: 400;
     font-size: 2.25rem;
@@ -67,37 +60,14 @@ body {
     text-decoration: none;
 }
 
-/* Farben für jeden Buchstaben */
+.rainbow-text span:nth-child(1) { color: rgba(255, 0, 0, 1); }
+.rainbow-text span:nth-child(2) { color: rgba(255, 127, 0, 1); }
+.rainbow-text span:nth-child(3) { color: rgba(235, 211, 0, 1); }
+.rainbow-text span:nth-child(4) { color: rgba(44, 189, 0, 1); }
+.rainbow-text span:nth-child(5) { color: rgba(0, 183, 204, 1); }
+.rainbow-text span:nth-child(6) { color: rgba(152, 0, 255, 1); }
+.rainbow-text span:nth-child(7) { color: rgba(232, 0, 240, 1); }
 
-.rainbow-text span:nth-child(1) {
-    color: rgba(255, 0, 0, 1);
-}
-
-.rainbow-text span:nth-child(2) {
-    color: rgba(255, 127, 0, 1);
-}
-
-.rainbow-text span:nth-child(3) {
-    color: rgba(235, 211, 0, 1);
-}
-
-.rainbow-text span:nth-child(4) {
-    color: rgba(44, 189, 0, 1);
-}
-
-.rainbow-text span:nth-child(5) {
-    color: rgba(0, 183, 204, 1);
-}
-
-.rainbow-text span:nth-child(6) {
-    color: rgba(152, 0, 255, 1);
-}
-
-.rainbow-text span:nth-child(7) {
-    color: rgba(232, 0, 240, 1);
-}
-
-/* Feuerwerk GIF (anfangs unsichtbar, aber NICHT absolut positioniert) */
 #catBalloon-gif {
     width: 250px;
     margin-top: 1rem;
@@ -142,21 +112,16 @@ body {
     margin-top: -40vh;
 }
 
-
 .hidden {
     display: none;
 }
 
-
-/* Dein bestehender Rahmen */
 #card-container {
     width: 400px;
     height: 500px;
-
     background-size: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,7 +129,6 @@ body {
     padding: 1rem;
 }
 
-/* Die eigentliche Karte */
 #card {
     width: 100%;
     height: 100%;
@@ -176,7 +140,6 @@ body {
     position: relative;
 }
 
-/* Inhalt */
 #card-front,
 #card-inside {
     padding: 2rem;
@@ -213,3 +176,29 @@ body {
   background-color: #f789ff;
 }
 
+/* Responsive Anpassung */
+@media (max-width: 768px) {
+  .text-box p,
+  .rainbow-text span {
+    font-size: 1.5rem;
+  }
+
+  #catBalloon-gif {
+    width: 150px;
+  }
+
+  #image-container {
+    width: 90%;
+    height: auto;
+  }
+
+  #card-container {
+    width: 95%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  #card {
+    height: auto;
+  }
+}
