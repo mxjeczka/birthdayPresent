@@ -206,11 +206,12 @@ body {
 @media (max-width: 768px) {
   .text-box p,
   .rainbow-text span {
-    font-size: clamp(3rem, 9vw, 5rem);
+    font-size: clamp(2rem, 8vw, 4rem);
   }
 
   .headline {
-    font-size: clamp(3rem, 9vw, 5rem); /* Beispielwert für größere Headline */
+    font-size: clamp(3rem, 9vw, 5rem);
+    margin-top: -5vh;
   }
 
   #catBalloon-gif {
@@ -220,7 +221,7 @@ body {
   #image-container {
     width: 90%;
     height: auto;
-     margin-top: 0;
+    margin-top: 0;
   }
 
   #card-container {
