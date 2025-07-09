@@ -205,11 +205,11 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .text-box p {
-  font-size: clamp(1.4rem, 6vw, 2.5rem);
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
 }
 
 .rainbow-text span {
-  font-size: clamp(2.5rem, 10vw, 4rem); 
+  font-size: clamp(3rem, 10vw, 4rem); 
 }
 
   .headline {
@@ -217,7 +217,7 @@ body {
   }
 
   #catBalloon-gif {
-    width: clamp(180px, 40vw, 250px);
+    width: clamp(220px, 50vw, 300px);
   }
 
   #image-container {
