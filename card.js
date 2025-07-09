@@ -17,3 +17,9 @@ closeBtn.addEventListener('click', () => {
   closeBtn.style.display = 'none';
   openBtn.style.display = 'inline-block';
 });
+
+const toCakeBtn = document.getElementById('to-cake-btn');
+
+toCakeBtn.addEventListener('click', () => {
+  window.location.href = 'cake.html'; // Weiterleitung zur Cake-Seite
+});
