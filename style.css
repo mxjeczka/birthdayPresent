@@ -219,7 +219,7 @@ body {
   max-width: 300px;
   aspect-ratio: 3 / 4;
   margin: 0 auto;            /* Zentriert horizontal */
-  margin-top: 20vh;          /* Zentriert vertikal */
+  margin-top: 0;          /* Zentriert vertikal */
   overflow: visible;         /* wichtig fürs Swipe-Verhalten */
 }
 
