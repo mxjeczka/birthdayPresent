@@ -204,10 +204,13 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .text-box p,
-  .rainbow-text span {
-    font-size: clamp(3rem, 6vw, 3rem);
-  }
+  .text-box p {
+  font-size: clamp(1.6rem, 5vw, 2.5rem); /* Beispielgröße für normalen Text */
+}
+
+.rainbow-text span {
+  font-size: clamp(2.2rem, 7vw, 3.5rem); /* Beispielgröße für bunten Text */
+}
 
   .headline {
     font-size: clamp(3rem, 9vw, 5rem);
