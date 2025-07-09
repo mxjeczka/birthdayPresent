@@ -213,16 +213,21 @@ body {
     width: clamp(180px, 40vw, 250px);
   }
 
-  #image-container {
+   #image-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 80vw; /* oder min-height: 250px; je nachdem */
+    height: 80vw; /* Oder was zu deiner Seite passt */
+    position: relative;
   }
 
-   #image-container img {
-    position: static; /* oder einfach position entfernen */
+  #image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
