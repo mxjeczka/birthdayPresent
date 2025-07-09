@@ -206,6 +206,8 @@ body {
   width: 100vw;
   height: 100vh;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
 /* Responsive */
