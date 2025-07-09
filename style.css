@@ -134,6 +134,7 @@ body {
     color: #831e8a;
     transform: rotate(6deg);
     text-align: center;
+     margin-top: -25vh;
 }
 
 .hidden {
@@ -210,7 +211,6 @@ body {
 
   .headline {
     font-size: clamp(3rem, 9vw, 5rem);
-    margin-top: -5vh;
   }
 
   #catBalloon-gif {
