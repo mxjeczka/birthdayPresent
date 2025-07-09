@@ -31,7 +31,7 @@ body {
     width: 100%;
     cursor: pointer;
     overflow: hidden;
-    padding-top: 25vh;
+    padding-top: 20vh;
 }
 
 .text-box {
@@ -205,7 +205,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .text-box p {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  font-size: clamp(1.4rem, 6vw, 2.5rem);
 }
 
 .rainbow-text span {
