@@ -13,6 +13,7 @@ body {
     height: calc(var(--vh, 1vh) * 100); 
     width: 100%;
     overflow: hidden;
+    font-size: 16px;
     font-family: 'Super Adorable', sans-serif;
     background: url('assets/images/birthdayBackround.jpg') no-repeat center center;
     background-size: cover;
@@ -88,7 +89,7 @@ body {
 .rainbow-text span:nth-child(7) { color: rgba(232, 0, 240, 1); }
 
 #catBalloon-gif {
-    width: clamp(150px, 30vw, 250px);
+    width: 250px;
     margin-top: 1rem;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -128,7 +129,7 @@ body {
 }
 
 .headline {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 6vw, 3rem);
     font-weight: normal;
     color: #831e8a;
     transform: rotate(6deg);
@@ -205,11 +206,11 @@ body {
 @media (max-width: 768px) {
   .text-box p,
   .rainbow-text span {
-    font-size: 6vw;
+    font-size: clamp(1.8rem, 6vw, 3rem);
   }
 
   #catBalloon-gif {
-    width: 150px;
+    width: clamp(180px, 40vw, 250px);
   }
 
   #image-container {
