@@ -107,7 +107,7 @@ body {
     max-width: 300px;
     height: auto;
     aspect-ratio: 3 / 4;
-    margin-top: 2rem;
+    margin-top: 0.5rem;
 }
 
 #image-container img {
