@@ -257,10 +257,10 @@ body {
   }
 
   #cake-image {
-  width: 100%;
-  max-width: 500px;
-  min-width: 450px;
-  margin: 0 auto;
-  display: block;
+    width: clamp(450px, 90vw, 500px);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: contain;
   }
 }
