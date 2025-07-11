@@ -356,16 +356,24 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .text-box p {
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
-   margin-top: 2rem;
-}
+  .text-box {
+    min-height: 9rem;        /* Platz für beide Zeilen */
+    padding-top: 1.5rem;     /* nach unten verschieben */
+  }
 
-.rainbow-text span {
-  font-size: clamp(3rem, 10vw, 4rem); 
-   margin-top: 2rem;
-   display: inline-block;
-}
+  .text-box p {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-top: 0;           /* kein extra Margin nötig, wird unten kompensiert */
+  }
+
+  .rainbow-text {
+    margin-top: 0.8rem;      /* etwas Abstand zur oberen Zeile */
+  }
+
+  .rainbow-text span {
+    font-size: clamp(3rem, 10vw, 4rem); 
+    display: inline-block;
+  }
 
   .headline {
     font-size: clamp(3rem, 9vw, 5rem);
