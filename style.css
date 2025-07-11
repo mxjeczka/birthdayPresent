@@ -233,26 +233,49 @@ body {
   position: relative;
 }
 
-/* Flamme: Über der Kerze positionieren */
 .flame {
+  border-radius: 100%;
   position: absolute;
-  top: 37%; /* Höhe anpassen, damit die Flamme auf der Kerze sitzt */
+  top: 37%;
   left: 50.5%;
-  transform: translate(-50%, -100%);
-  width: 40px;
-  height: 60px;
-  background: radial-gradient(ellipse at center, #ffdb4d 0%, #ff9900 70%, transparent 80%);
-  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
-  filter: drop-shadow(0 0 8px #ff9900);
-  transition: opacity 1s ease;
-  pointer-events: none;
-  opacity: 1;
+  margin-left: -3px; /* wenn nötig */
+  width: 8px;
+  height: 24px;
+  transform-origin: 50% 100%; /* ganz wichtig für natürliches Flackern */
+  animation-fill-mode: forwards;
 }
 
-/* Flamme ausgepustet = unsichtbar */
-.flame.extinguished {
-  opacity: 0;
+/* Animations mit deinem Keyframes */
+.flame:nth-child(1) {
+  animation: flame 2s 7.5s infinite;
 }
+.flame:nth-child(2) {
+  animation: flame 1.5s 7.5s infinite;
+}
+.flame:nth-child(3) {
+  animation: flame 1s 7.5s infinite;
+}
+.flame:nth-child(4) {
+  animation: flame 0.5s 7.5s infinite;
+}
+.flame:nth-child(5) {
+  animation: flame 0.2s 7.5s infinite;
+}
+
+@keyframes flame {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 60px 10px rgba(248, 233, 209, 0.9);
+    transform: translateY(-10px) scale(1.4);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+
 
 
 /* Responsive */
