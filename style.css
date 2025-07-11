@@ -254,8 +254,8 @@ body {
   }
 
    #cake-image {
-    max-width: 95vw;
-    max-height: 85vh;
+    width: 95vw;
+    height: 85vh;
     margin: 0 auto;
     display: block;
   }
