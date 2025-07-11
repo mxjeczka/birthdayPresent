@@ -60,5 +60,17 @@
 
   window.addEventListener("load", () => {
     initBlowDetection();
+
+    // Klick zum Testen auf PC
+    const flames = document.querySelectorAll(".flame");
+    flames.forEach(f => {
+      f.style.cursor = "pointer";
+      f.addEventListener("click", () => {
+        if (!candlesBlownOut) {
+          candlesBlownOut = true;
+          blowOutFlames();
+        }
+      });
+    });
   });
 })();
