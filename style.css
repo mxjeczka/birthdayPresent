@@ -330,8 +330,8 @@ body {
   .flame {
     width: 8px;   /* größer für größere Bildschirme */
     height: 24px;
-    top: 38%;          /* etwas feinjustieren */
-    left: 50.7%;       /* auch anpassen */
-    margin-left: -4px; /* halbe Breite */
+    top: 36%;          /* etwas feinjustieren */
+    left: 50.5%;       /* auch anpassen */
+    margin-left: -3px; /* halbe Breite */
   }
 }
