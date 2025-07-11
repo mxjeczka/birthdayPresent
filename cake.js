@@ -1,5 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const flame = document.getElementById("flame");
+(() => {
   let audioContext;
   let analyser;
   let dataArray;
@@ -29,18 +28,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     analyser.getByteFrequencyData(dataArray);
     const lowFrequencyValues = dataArray.slice(0, 15);
-    const averageLowFrequency =
-      lowFrequencyValues.reduce((sum, value) => sum + value, 0) / lowFrequencyValues.length;
+    const averageLowFrequency = lowFrequencyValues.reduce((sum, val) => sum + val, 0) / lowFrequencyValues.length;
 
-    const blowThreshold = 100; // Schwellenwert für Blasen
-    const requiredDuration = 1500; // 1,5 Sekunden Blasen erforderlich
+    const blowThreshold = 100;  // Schwellenwert fürs Pusten
+    const requiredDuration = 1500; // 1.5 Sekunden pusten
 
     if (averageLowFrequency > blowThreshold) {
       if (!blowStartTime) {
         blowStartTime = performance.now();
       } else if (performance.now() - blowStartTime > requiredDuration) {
         candlesBlownOut = true;
-        extinguishFlame();
+        blowOutFlames();
       }
     } else {
       if (blowStartTime && performance.now() - blowStartTime > 200) {
@@ -51,12 +49,14 @@ window.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(detectBlow);
   }
 
-  function extinguishFlame() {
-    flame.classList.add("extinguished");
+  function blowOutFlames() {
+    const flames = document.querySelectorAll(".flame");
+    flames.forEach(f => {
+      f.classList.add("out");
+    });
   }
 
-  // Mikrofon erst nach kurzem Timeout anfragen (optional)
-  setTimeout(() => {
+  window.addEventListener("load", () => {
     initBlowDetection();
-  }, 1000);
-});
+  });
+})();

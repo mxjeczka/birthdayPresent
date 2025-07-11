@@ -7,19 +7,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-black-80">
-    <div class="centered-container">
-      <div id="cake-container" style="position: relative;">
-        <img id="cake-image" src="assets/images/cake.png" alt="Cake Bild" />
-        <div class="candle" style="position: relative;">
-  <img id="cake-image" src="assets/images/cake.png" alt="Cake Bild" />
-  <div class="flame"></div>
-  <div class="flame"></div>
-  <div class="flame"></div>
-  <div class="flame"></div>
-  <div class="flame"></div>
-</div>
-
+  <div class="bg-black-80" style="height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; position: relative;">
+    <div id="cake-container" style="position: relative; display: inline-block;">
+      <img id="cake-image" src="assets/images/cake.png" alt="Cake Bild" />
+      <!-- Flammen über der Kerze positioniert -->
+      <div class="candle" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
       </div>
     </div>
   </div>
