@@ -5,15 +5,15 @@ const openBtn = document.getElementById('open-card-btn');
 const closeBtn = document.getElementById('close-card-btn');
 
 openBtn.addEventListener('click', () => {
-  cardFront.style.display = 'none';
-  cardInside.style.display = 'block';
+  cardFront.classList.add('hidden');    // Front ausblenden
+  cardInside.classList.remove('hidden'); // Inside einblenden
   openBtn.style.display = 'none';
   closeBtn.style.display = 'inline-block';
 });
 
 closeBtn.addEventListener('click', () => {
-  cardInside.style.display = 'none';
-  cardFront.style.display = 'block';
+  cardInside.classList.add('hidden');   // Inside ausblenden
+  cardFront.classList.remove('hidden'); // Front einblenden
   closeBtn.style.display = 'none';
   openBtn.style.display = 'inline-block';
 });
