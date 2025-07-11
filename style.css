@@ -257,7 +257,8 @@ body {
   }
 
  #cake-image {
-  width: clamp(250px, 90vw, 500px);
+  width: 500px;
+  max-width: 90vw;
   margin: 0 auto;
   display: block;
   }
