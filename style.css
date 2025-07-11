@@ -133,7 +133,7 @@ body {
     color: #831e8a;
     transform: rotate(6deg);
     text-align: center;
-    margin-top: -35vh;
+    margin-top: -45vh;
 }
 
 .hidden {
@@ -358,10 +358,13 @@ body {
 @media (max-width: 768px) {
   .text-box p {
   font-size: clamp(1.8rem, 6vw, 2.5rem);
+   margin-top: 2rem;
 }
 
 .rainbow-text span {
   font-size: clamp(3rem, 10vw, 4rem); 
+   margin-top: 2rem;
+   display: inline-block;
 }
 
   .headline {
@@ -370,6 +373,7 @@ body {
 
   #catBalloon-gif {
     width: clamp(220px, 50vw, 300px);
+     margin-top: 2rem; 
   }
 
   #image-container {
