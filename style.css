@@ -31,7 +31,6 @@ body {
     width: 100%;
     cursor: pointer;
     overflow: hidden;
-    padding-top: 20vh;
 }
 
 .text-box {
@@ -134,7 +133,7 @@ body {
     color: #831e8a;
     transform: rotate(6deg);
     text-align: center;
-     margin-top: -30vh;
+    margin-top: -35vh;
 }
 
 .hidden {
@@ -202,13 +201,23 @@ body {
   background-color: #f789ff;
 }
 
-#canvas-container {
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
-  height: 100vh;
-  display: block;
-  margin: 0;
-  padding: 0;
 }
+
+#cake-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 0; /* keine abgerundeten Ecken */
+  box-shadow: none; /* kein Schatten */
+  background: transparent; /* sicherheitshalber */
+  display: block; /* entfernt ggf. Inline-Abstände */
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -242,5 +251,12 @@ body {
 
   #card {
     height: auto;
+  }
+
+   #cake-image {
+    max-width: 90vw;
+    max-height: 70vh;
+    margin: 0 auto;
+    display: block;
   }
 }
