@@ -401,6 +401,13 @@ body {
     left: 50.1%;       /* auch anpassen */
     margin-left: -3px; /* halbe Breite */
   }
+  
+  #happy-birthday {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    top: 50px; /* Über der Torte, hier ggf. noch anpassen */
+    left: 51%;
+    transform: translateX(-50%);
+  }
 
     #confetti {
     width: 100vw;
