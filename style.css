@@ -221,6 +221,39 @@ body {
   margin: 0 auto;
 }
 
+/* Abdunkelnder Hintergrund mit 80% Deckkraft */
+.bg-black-80 {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Flamme: Über der Kerze positionieren */
+.flame {
+  position: absolute;
+  top: 37%; /* Höhe anpassen, damit die Flamme auf der Kerze sitzt */
+  left: 50.5%;
+  transform: translate(-50%, -100%);
+  width: 40px;
+  height: 60px;
+  background: radial-gradient(ellipse at center, #ffdb4d 0%, #ff9900 70%, transparent 80%);
+  border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+  filter: drop-shadow(0 0 8px #ff9900);
+  transition: opacity 1s ease;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Flamme ausgepustet = unsichtbar */
+.flame.extinguished {
+  opacity: 0;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
