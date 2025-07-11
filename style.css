@@ -308,9 +308,9 @@ body {
 #happy-birthday span:nth-child(9)  { transform: rotate(24deg)  translateY(-24px) rotate(-24deg); }
 #happy-birthday span:nth-child(10) { transform: rotate(35deg)  translateY(-22px) translateX(-5px) rotate(-30deg); }
 #happy-birthday span:nth-child(11) { transform: rotate(43deg)  translateY(-21px) translateX(-6px) rotate(-36deg); }
-#happy-birthday span:nth-child(12) { transform: rotate(47deg)  translateY(-20px) rotate(-42deg); }
-#happy-birthday span:nth-child(13) { transform: rotate(48deg)  translateY(-20px) rotate(-48deg); }
-#happy-birthday span:nth-child(14) { transform: rotate(54deg)  translateY(-20px) rotate(-54deg); }
+#happy-birthday span:nth-child(12) { transform: rotate(50deg)  translateY(-21px) translateX(-6px) rotate(-42deg); }
+#happy-birthday span:nth-child(13) { transform: rotate(56deg)  translateY(-19px) translateX(-5px) rotate(-48deg); }
+#happy-birthday span:nth-child(14) { transform: rotate(62deg)  translateY(-17px) translateX(-2px) rotate(-54deg); }
 
 
 
