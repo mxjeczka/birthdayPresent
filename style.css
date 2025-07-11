@@ -233,27 +233,15 @@ body {
   position: relative;
 }
 
-.flame {
-  border-radius: 100%;
-  position: absolute;
-  top: 37%;
-  left: 50.5%;
-  margin-left: -3px; /* wenn nötig */
-  width: 8px;
-  height: 24px;
-  transform-origin: 50% 100%; /* ganz wichtig für natürliches Flackern */
-  animation-fill-mode: forwards;
-}
-
 /* Flamme */
 .flame {
   border-radius: 100%;
   position: absolute;
-  top: 35.5%;
-  left: 50.3%;
+  top: 33%;
+  left: 49.9%;
   margin-left: -3px; /* für zentrierte Flamme */
-  width: 8px;
-  height: 24px;
+  width: 16px;
+  height: 48px;
   transform-origin: 50% 100%; /* Basis der Flamme */
   animation-fill-mode: forwards;
 }
