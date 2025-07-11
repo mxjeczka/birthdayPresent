@@ -280,9 +280,9 @@ body {
 
 /* Wenn ausgeblasen, Flammen ausblenden */
 .flame.out {
-  animation: none !important;
-  opacity: 0 !important;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.5s ease-out;
 }
 
 
