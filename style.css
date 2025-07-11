@@ -263,6 +263,56 @@ body {
   animation: flame 0.2s infinite;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 1s ease;
+}
+
+#happy-birthday {
+  position: absolute;
+  top: 0px; /* Über der Torte, hier ggf. noch anpassen */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  user-select: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+#happy-birthday.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#happy-birthday span {
+  display: inline-block;
+  transform-origin: bottom center;
+}
+
+/* Buchstaben im Bogen rotieren */
+#happy-birthday span:nth-child(1)  { transform: rotate(-30deg); }
+#happy-birthday span:nth-child(2)  { transform: rotate(-22deg); }
+#happy-birthday span:nth-child(3)  { transform: rotate(-14deg); }
+#happy-birthday span:nth-child(4)  { transform: rotate(-6deg);  }
+#happy-birthday span:nth-child(5)  { transform: rotate(0deg);   }
+#happy-birthday span:nth-child(6)  { transform: rotate(6deg);   } /* space */
+#happy-birthday span:nth-child(7)  { transform: rotate(12deg);  }
+#happy-birthday span:nth-child(8)  { transform: rotate(18deg);  }
+#happy-birthday span:nth-child(9)  { transform: rotate(24deg);  }
+#happy-birthday span:nth-child(10) { transform: rotate(30deg);  }
+#happy-birthday span:nth-child(11) { transform: rotate(36deg);  }
+#happy-birthday span:nth-child(12) { transform: rotate(42deg);  }
+#happy-birthday span:nth-child(13) { transform: rotate(48deg);  }
+#happy-birthday span:nth-child(14) { transform: rotate(54deg);  }
+
+
 @keyframes flame {
   0%, 100% {
     background: rgba(254, 248, 97, 0.5);

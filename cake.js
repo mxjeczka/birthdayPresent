@@ -50,13 +50,20 @@
   }
 
   function blowOutFlames() {
-    console.log("Blow out flames triggered!");
-    const flames = document.querySelectorAll(".flame");
-    flames.forEach(f => {
-      f.classList.add("out");
-      f.style.animationPlayState = 'paused'; // Animation stoppen
-    });
+  console.log("Blow out flames triggered!");
+  const flames = document.querySelectorAll(".flame");
+  flames.forEach(f => {
+    f.classList.add("out");
+    f.style.animationPlayState = 'paused'; // Animation stoppen
+  });
+
+  // Happy Birthday Bogen sichtbar machen
+  const happyText = document.getElementById('happy-birthday');
+  if (happyText) {
+    happyText.classList.add('visible');
   }
+}
+
 
   window.addEventListener("load", () => {
     initBlowDetection();
