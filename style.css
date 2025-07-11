@@ -210,12 +210,15 @@ body {
 }
 
 #cake-image {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 0; /* keine abgerundeten Ecken */
-  box-shadow: none; /* kein Schatten */
-  background: transparent; /* sicherheitshalber */
-  display: block; /* entfernt ggf. Inline-Abstände */
+  width: 90vw;      /* Breite max 90% der Viewport-Breite */
+  height: auto;     /* Höhe automatisch passend */
+  max-height: 90vh; /* maximal 90% der Viewport-Höhe */
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  display: block;
+  object-fit: contain; /* wichtig für die korrekte Skalierung */
+  margin: 0 auto;
 }
 
 
