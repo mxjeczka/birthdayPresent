@@ -237,11 +237,11 @@ body {
 .flame {
   border-radius: 100%;
   position: absolute;
-  top: 33%;
-  left: 49.9%;
+  top: 36%;
+  left: 50.2%;
   margin-left: -3px; /* für zentrierte Flamme */
-  width: 16px;
-  height: 48px;
+  width: 8px;
+  height: 24px;
   transform-origin: 50% 100%; /* Basis der Flamme */
   animation-fill-mode: forwards;
 }
@@ -325,5 +325,10 @@ body {
   width: clamp(400px, 90vw, 500px);
   margin: 0 auto; /* Horizontale Zentrierung */
   display: block; /* Damit margin: 0 auto funktioniert */
+  }
+
+  .flame {
+    width: 16px;   /* größer für größere Bildschirme */
+    height: 48px;
   }
 }
