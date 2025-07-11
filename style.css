@@ -257,7 +257,7 @@ body {
   }
 
   #cake-image {
-  width: clamp(400px, 90vw, 450px);
+  width: clamp(450px, 90vw, 500px);
   margin: 0 auto; /* Horizontale Zentrierung */
   display: block; /* Damit margin: 0 auto funktioniert */
   }
