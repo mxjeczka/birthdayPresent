@@ -18,8 +18,9 @@ function setRealVh(){
 }
 setRealVh();  window.addEventListener('resize',setRealVh);
 
+
 /* --------------------------------------------------
-   PAGE‑1  (Intro, Regenbogen, GIF)
+   PAGE‑1  (Intro, Regenbogen, GIF + AUDIO Start)
 -------------------------------------------------- */
 function setupPage1(){
   const sentences = ['<p>Wszystkiego najlepszego z okazji</p>'];
@@ -28,9 +29,17 @@ function setupPage1(){
   const rainbowWrapper = document.getElementById('rainbow-wrapper');
   const catGif         = document.getElementById('catBalloon-gif');
   const container      = document.getElementById('click-container');
+  const bgAudio        = document.getElementById('bg-audio');
 
   let step = 0;
+  let audioStarted = false;
+
   container.onclick = () => {
+    if (!audioStarted) {
+      bgAudio.play().catch(err => console.warn('Autoplay blockiert:', err));
+      audioStarted = true;
+    }
+
     if(step===0){
       textWrapper.innerHTML = sentences[0];
       requestAnimationFrame(()=>textWrapper.firstElementChild.classList.add('visible'));
@@ -45,6 +54,7 @@ function setupPage1(){
     }
   };
 }
+
 
 /* --------------------------------------------------
    PAGE‑2  (Swipe‑Bilder)
@@ -103,6 +113,7 @@ function setupPage2(){
   finalMsg.onclick=nextPage;
 }
 
+
 /* --------------------------------------------------
    PAGE‑3  (Klappkarte)
 -------------------------------------------------- */
@@ -133,6 +144,7 @@ function setupPage3(){
   container.querySelector('#to-cake-btn').onclick=nextPage;
 }
 
+
 /* --------------------------------------------------
    PAGE‑4  (Kerzen + Pusten)
 -------------------------------------------------- */
@@ -150,9 +162,8 @@ function setupPage4(){
     conf.classList.remove('hidden');conf.classList.add('visible');
     setTimeout(()=>conf.classList.remove('visible'),2500);
   }
-  flames.forEach(f => { f.style.cursor='pointer'; f.onclick=blowOut; });
 
-  
+  flames.forEach(f => { f.style.cursor='pointer'; f.onclick=blowOut; });
 
   // Mikrofon‑Erkennung
   navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
