@@ -373,7 +373,6 @@ body {
 
   #catBalloon-gif {
     width: clamp(220px, 50vw, 300px);
-     margin-top: 2rem; 
   }
 
   #image-container {
