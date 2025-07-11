@@ -50,9 +50,11 @@
   }
 
   function blowOutFlames() {
+    console.log("Blow out flames triggered!");
     const flames = document.querySelectorAll(".flame");
     flames.forEach(f => {
       f.classList.add("out");
+      f.style.animationPlayState = 'paused'; // Animation stoppen
     });
   }
 
