@@ -253,11 +253,7 @@ body {
     height: auto;
   }
 
-   #cake-image {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    display: block;
-    object-fit: contain;
+  #cake-image {
+  width: clamp(250px, 70vw, 350px);
   }
 }
