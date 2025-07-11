@@ -313,6 +313,22 @@ body {
 #happy-birthday span:nth-child(14) { transform: rotate(62deg)  translateY(-17px) translateX(-2px) rotate(-54deg); }
 
 
+/* Vollbild-Overlay für das GIF */
+#confetti {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 40;
+  opacity: 0;                          /* <== WICHTIG! */
+  pointer-events: none;               /* Optional, damit es nicht klickbar ist */
+  transition: opacity 1s ease;        /* <== WICHTIG für Übergang */
+}
+
+#confetti.visible{
+  opacity:1;             /* wird eingeblendet */
+}
 
 @keyframes flame {
   0%, 100% {

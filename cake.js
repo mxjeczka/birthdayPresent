@@ -49,20 +49,32 @@
     requestAnimationFrame(detectBlow);
   }
 
-  function blowOutFlames() {
-  console.log("Blow out flames triggered!");
-  const flames = document.querySelectorAll(".flame");
-  flames.forEach(f => {
-    f.classList.add("out");
-    f.style.animationPlayState = 'paused'; // Animation stoppen
+ function blowOutFlames(){
+  // Flammen stoppen
+  document.querySelectorAll('.flame').forEach(f=>{
+    f.classList.add('out');
+    f.style.animationPlayState='paused';
   });
 
-  // Happy Birthday Bogen sichtbar machen
-  const happyText = document.getElementById('happy-birthday');
-  if (happyText) {
-    happyText.classList.add('visible');
+  // Happy‑Birthday‑Bogen einblenden
+  const happy = document.getElementById('happy-birthday');
+  if(happy) happy.classList.add('visible');
+
+  const confetti = document.getElementById('confetti');
+if (confetti) {
+  confetti.classList.remove('hidden');
+   if (confetti){
+    confetti.classList.add('visible');      // einblenden
+
+    //  ► nach 5 Sekunden wieder ausblenden
+    setTimeout(()=>{
+      confetti.classList.remove('visible');
+    }, 2500);  // Dauer in ms   ⇐ hier an GIF‑Länge anpassen
+
   }
-}
+  }
+  }
+
 
 
   window.addEventListener("load", () => {
